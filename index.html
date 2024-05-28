@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trunfo dos MLK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="minhaCarta" class="box-cartas">
+            <!-- <img src="imagens/gustavo.jpg" id="imgMinhaCarta"> -->
+            <h3 id="nomeMinhaCarta"></h3>
+            <div class="selecioneAtributo">
+                <p>Escolha seu atributo:</p>
+
+                <label id="forcaMinhaCarta">Força:</label>
+                <input type="radio" name="atributo" value="forca">
+                <br>
+
+                <label id="defesaMinhaCarta">Defesa:</label>
+                <input type="radio" name="atributo" value="defesa">
+                <br>
+
+                <label id="magiaMinhaCarta">Magia</label>
+                <input type="radio" name="atributo" value="magia">
+                <br>
+
+                <button id="btnJogar" onclick="comparaAtributos()">Jogar</button>
+            </div>
+        </div>
+        <div id="cartaOpopnente" class="box-cartas">
+            <!-- <img id="imgCartaOponente"> -->
+        </div>
+        <p id="resultado"></p>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
