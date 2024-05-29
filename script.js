@@ -1,6 +1,6 @@
 let gustavo = {
     nome: "Gustavo",
-    img: "",
+    img: "imagens/gustavo.jpg",
     atributos: {
         forca: 5,
         defesa: 10,
@@ -18,13 +18,18 @@ let juan = {
 }
 let arthur = {
     nome: "Arthur",
-    img: "",
+    img: "imagens/arthur.jpg",
     atributos: {
         forca: 5,
         defesa: 5,
         magia: 10
     }
 }
+
+let btnRecomecar = document.getElementById('btnRecomecar');
+btnRecomecar.style.display = 'none';
+let form = document.getElementById('form');
+form.reset();
 
 let cartas = [gustavo, juan, arthur];
     let numeroDaMinhaCarta = Math.floor(Math.random() * cartas.length);
@@ -42,18 +47,22 @@ let cartas = [gustavo, juan, arthur];
     exibeAtributos();
 
 function exibeAtributos() {
+    let imgMinhaCarta = document.getElementById('imgMinhaCarta');
     let textoNomeMinhaCarta = document.getElementById('nomeMinhaCarta');
     let textoForcaMinhaCarta = document.getElementById('forcaMinhaCarta');
     let textoDefesaMinhaCarta = document.getElementById('defesaMinhaCarta');
     let textoMagiaMinhaCarta = document.getElementById('magiaMinhaCarta');
 
+    imgMinhaCarta.src = minhaCarta.img;
     textoNomeMinhaCarta.textContent = minhaCarta.nome;
     textoForcaMinhaCarta.textContent = `Força: ${minhaCarta.atributos.forca}`;
     textoDefesaMinhaCarta.textContent = `Defesa: ${minhaCarta.atributos.defesa}`;
     textoMagiaMinhaCarta.textContent = `Magia: ${minhaCarta.atributos.magia}`;
 }
 function comparaAtributos() {
+    btnRecomecar.style.display = 'inline';
     var selectedAttribute = document.querySelector('input[name="atributo"]:checked');
+
     console.log(selectedAttribute);
     if (selectedAttribute) {
         let valueSelectedAttribute = selectedAttribute.value;
@@ -67,20 +76,25 @@ function comparaAtributos() {
             resultado.textContent = 'Empatou!';
         }else{
             mostraAdversario();
-            resultado.textContent = 'Perdeu!';
+            resultado.textContent = 'Você Perdeu!';
         }
     }else{
         alert("Escolha um atributo para continuar!");
     }
 }
 function mostraAdversario(){
+    let imgCartaOponente = document.getElementById('imgCartaOponente');
     let textoNomeCartaOponente = document.getElementById('nomeCartaOponente');
     let textoForcaCartaOponente = document.getElementById('forcaCartaOponente');
     let textoDefesaCartaOponente = document.getElementById('defesaCartaOponente');
     let textoMagiaCartaOponente = document.getElementById('magiaCartaOponente');
 
+    imgCartaOponente.src = cartaOponente.img;
     textoNomeCartaOponente.textContent = cartaOponente.nome;
     textoForcaCartaOponente.textContent = `Força: ${cartaOponente.atributos.forca}`
     textoDefesaCartaOponente.textContent = `Defesa: ${cartaOponente.atributos.defesa}`
     textoMagiaCartaOponente.textContent = `Magia: ${cartaOponente.atributos.magia}`
+}
+function recomecar(){
+    window.location.reload();
 }

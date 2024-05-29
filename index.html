@@ -11,36 +11,40 @@
 <body>
     <div class="container">
         <div id="minhaCarta" class="box-cartas">
-            <!-- <img src="imagens/gustavo.jpg" id="imgMinhaCarta"> -->
+            <img src="" id="imgMinhaCarta">
             <h3 id="nomeMinhaCarta"></h3>
             <div class="selecioneAtributo">
                 <p>Escolha seu atributo:</p>
+                <form id="form">
+                    <label id="forcaMinhaCarta">Força:</label>
+                    <input type="radio" name="atributo" value="forca">
+                    <br>
 
-                <label id="forcaMinhaCarta">Força:</label>
-                <input type="radio" name="atributo" value="forca">
-                <br>
+                    <label id="defesaMinhaCarta">Defesa:</label>
+                    <input type="radio" name="atributo" value="defesa">
+                    <br>
 
-                <label id="defesaMinhaCarta">Defesa:</label>
-                <input type="radio" name="atributo" value="defesa">
-                <br>
-
-                <label id="magiaMinhaCarta">Magia</label>
-                <input type="radio" name="atributo" value="magia">
+                    <label id="magiaMinhaCarta">Magia</label>
+                    <input type="radio" name="atributo" value="magia">
+                </form>
             </div>
         </div>
         <div id="cartaOpopnente" class="box-cartas">
-            <!-- <img id="imgCartaOponente"> -->
-            <h3 id="nomeCartaOponente"></h3>
-            <p id="forcaCartaOponente"></p>
-            <p id="defesaCartaOponente"></p>
-            <p id="magiaCartaOponente"></p>
-
+            <img id="imgCartaOponente">
+            <h3 id="nomeCartaOponente">???????</h3>
+            <p>Atributos:</p>
+            <form>
+                <label id="forcaCartaOponente">Força: ??</label><br>
+                <label id="defesaCartaOponente">Defesa: ??</label><br>
+                <label id="magiaCartaOponente">Magia: ??</label><br>
+            </form>
         </div>
     </div>
     <div id="resu">
         <p id="resultado"></p>
         <br>
-        <button id="btnJogar" onclick="comparaAtributos()">Jogar</button>
+        <button onclick="comparaAtributos()">Jogar</button>
+        <button id="btnRecomecar" onclick="recomecar()">De novo</button>
     </div>
 </body>
 <script src="script.js"></script>
