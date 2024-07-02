@@ -28,7 +28,7 @@ let arthur = {
         agilidade: 20
     }
 }
-
+let divPontuacao = document.getElementById('pontuacao');
 let btnRecomecar = document.getElementById('btnRecomecar');
 btnRecomecar.style.display = 'none';
 let form = document.getElementById('form');
@@ -47,8 +47,21 @@ let cartas = [gustavo, juan, arthur];
     let cartaOponente = cartas[numeroDaCartaDoAversario];//escolhe qual será a carta a partir do seu nome
     console.log(cartaOponente);
 
+    checkStorage();
     exibeAtributos();
+function checkStorage() {
+        var meusPontos = localStorage.getItem("minhaPontuacao");
+        var pontosOponente = localStorage.getItem("pontuacaoOponente")
 
+        if (meusPontos == "" || meusPontos == null) {
+            localStorage.setItem("minhaPontuacao", 0);
+            localStorage.setItem("pontuacaoOponente", 0)
+        }
+        else if (meusPontos != "" && meusPontos != null) {
+            minhaPontuacao = meusPontos;
+            divPontuacao.textContent = `${minhaPontuacao} X `;
+        }
+}
 function exibeAtributos() {
     let imgMinhaCarta = document.getElementById('imgMinhaCarta');
     let textoNomeMinhaCarta = document.getElementById('nomeMinhaCarta');
